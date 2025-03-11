@@ -85,7 +85,7 @@ namespace Calculadora.ConsoleApp
                         outraconta = Console.ReadLine();
                         if (outraconta == "s" || outraconta == "S")
                         {
-                            continuar = 7;
+                            continue;
                         }
                         else if (outraconta == "n" || outraconta == "N")
                         {
@@ -95,13 +95,14 @@ namespace Calculadora.ConsoleApp
                         else
                         {
                             Console.WriteLine("Comando Inválido, retornando ao menu principal");
-                            continuar = 7;
-                            
+                            continue;
+
+
                         }
                     }
                     else
                     {
-                        continuar = 7;
+                        continue;
                     }
                 }
                 else if (qualoperacao == "2")
@@ -118,7 +119,7 @@ namespace Calculadora.ConsoleApp
                         outraconta = Console.ReadLine();
                         if (outraconta == "s" || outraconta == "S")
                         {
-                            continuar = 7;
+                            continue;
                         }
                         else if (outraconta == "n" || outraconta == "N")
                         {
@@ -128,12 +129,12 @@ namespace Calculadora.ConsoleApp
                         else
                         {
                             Console.WriteLine("Comando Inválido, retornando ao menu principal");
-                            continuar = 7;
+                            continue;
                         }
                     }
                     else
                     {
-                        continuar = 7;
+                        continue;
                     }
                 }
                 else if (qualoperacao == "3")
@@ -168,12 +169,12 @@ namespace Calculadora.ConsoleApp
                         else
                         {
                             Console.WriteLine("Comando Inválido, retornando ao menu principal");
-                            continuar = 7;
+                            continue;
                         }
                     }
                     else
                     {
-                        continuar = 7;
+                        continue;
 
                     }
 
@@ -195,7 +196,7 @@ namespace Calculadora.ConsoleApp
                         outraconta = Console.ReadLine();
                         if (outraconta == "s" || outraconta == "S")
                         {
-                            continuar = 7;
+                            continue;
                         }
                         else if (outraconta == "n" || outraconta == "N")
                         {
@@ -205,12 +206,12 @@ namespace Calculadora.ConsoleApp
                         else
                         {
                             Console.WriteLine("Comando Inválido, retornando ao menu principal");
-                            continuar = 7;
+                            continue;
                         }
                     }
                     else
                     {
-                        continuar = 7;
+                        continue;
                     }
                 }  
             } while (continuar == 7);
