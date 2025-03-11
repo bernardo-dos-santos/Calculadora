@@ -29,19 +29,20 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine("3 - Divisão", "/n");
                 Console.WriteLine("4 - Multiplicação", "/n");
                 Console.WriteLine("5 - Mostrar Histórico ", "/n");
-                Console.WriteLine("6 - Sair do Programa", "/n");
+                Console.WriteLine("6 - Tabuada ", "/n");
+                Console.WriteLine("7 - Sair do Programa", "/n");
                 Console.WriteLine("-----------------------------------------------------", "/n");
                 continuar = 7;
                 // Escolher qual operação o usario deseja 
                 qualoperacao = Console.ReadLine();
                 // se for inválido o comando 
-                if (qualoperacao != "1" && qualoperacao != "2" && qualoperacao != "3" && qualoperacao != "4" && qualoperacao != "5" && qualoperacao != "6")
+                if (qualoperacao != "1" && qualoperacao != "2" && qualoperacao != "3" && qualoperacao != "4" && qualoperacao != "5" && qualoperacao != "6" && qualoperacao != "7")
                 {
                     Console.WriteLine("Comando Inválido, Voltando ao menu principal", "/n");
                     continue;
 
                 }
-                else if (qualoperacao == "6")
+                else if (qualoperacao == "7")
                 {
                     Console.WriteLine("Obrigado Pela Presença!!");
                     break;
@@ -67,8 +68,44 @@ namespace Calculadora.ConsoleApp
                         continue;
 
                     }
+                } else if (qualoperacao == "6")
+                {
+                    string numerotabuadastring;
+                    string espaço1 = "7";
+                    Console.WriteLine("Digite o numero desejado:  ", "/n");
+                    numerotabuadastring = Console.ReadLine();
+                    if(SaoNumeros(numerotabuadastring, espaço1,out decimal numerotabuada, out decimal espaço2))
+                    {
+                        for (int contador = 1; contador < 11; contador++)
+                        {
+                            Console.WriteLine($"{numerotabuada} x {contador} = {numerotabuada * contador} ", "/n");
+                        }
+                        historicooperacoes.Add($"foi realizado a tabuada do numero {numerotabuada} de 1 a 10");
+                        Console.WriteLine("Deseja Realizar outra operação? [s/n]");
+                        string outraconta;
+                        outraconta = Console.ReadLine();
+                        if (outraconta == "s" || outraconta == "S")
+                        {
+                            continue;
+                        }
+                        else if (outraconta == "n" || outraconta == "N")
+                        {
+                            Console.WriteLine("Obrigado pela presença!!");
+                            continuar = 8;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Comando Inválido, retornando ao menu principal");
+                            continue;
+                        }
+                    } else
+                    {
+                        Console.WriteLine("Numero Inválido, voltando ao menu principal");
+                        continue;
+                    }
+
                 }
-                Console.WriteLine("Digite o Primeiro Número: ", "/n");
+                    Console.WriteLine("Digite o Primeiro Número: ", "/n");
                 primeironumero1 = Console.ReadLine();
                 Console.WriteLine("Digite o Segundo Número: ", "/n");
                 segundonumero1 = Console.ReadLine();
